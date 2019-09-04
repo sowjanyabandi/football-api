@@ -1,7 +1,10 @@
 //const Team = require("./team/model");
+const bodyParser = require("body-parser");
 const express = require("express");
 //const db = require("./db");
 const app = express();
+const jsonParser = bodyParser.json();
+app.use(jsonParser);
 const port = process.env.PORT || 4000;
 const teamRouter = require("./team/router");
 app.listen(port, () => console.log(`Listening on port ${port}!`));
