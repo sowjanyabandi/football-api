@@ -10,8 +10,10 @@ router.get("/team", (req, res, next) => {
     .catch(error => next(error));
 });
 router.post("/team", (req, res, next) => {
-  Team.create({ name: "A", name: "B", name: "C" })
-    .then(rows => res.send(rows))
+  // it uses the body of the req to create a new team
+  Team.create(req.body)
+    .then(team => res.send(team))
+
     .catch(error => next(error));
 });
 module.exports = router;

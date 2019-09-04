@@ -1,5 +1,7 @@
 const Sequelize = require("sequelize");
 const db = require("../db");
+
+//defines row in db
 const Team = db.define(
   "team",
   {
